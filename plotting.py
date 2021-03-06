@@ -17,7 +17,7 @@ print(clinker_data)
 
 # Compute a total alkali column by summing two columns together
 total_alkali = ((clinker_data[:,7]) + (clinker_data[:,8]))
-print(total_alkali)
+
 
 # Append this new column to the existing temperature_data array
 processed_clinker_data = np.append(clinker_data, total_alkali,1)
@@ -41,11 +41,3 @@ total_alkali_figure.savefig('./TAS_clinkers.png')
 
 
 
-#all_data = pd.read_csv("110-tavg-12-12-1950-2020.csv", index_col='Date', header=4)
-#all_data.info()
-#all_data.to_json("data_output.json")
-
-#json_data = pd.read_json("data_output.json")
-#json_data.info()
-
-#print(json_data.loc['195012':'197512','Value'])
