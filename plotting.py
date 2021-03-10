@@ -7,13 +7,15 @@ import matplotlib.pyplot as plt
 #import tasplot
 import pandas as pd
 
-# Create an array (a multi-dimensional table) out of our data file, full of text
-all_clinker_data = np.genfromtxt("clinker_data_p3.csv", delimiter=',',skip_header=1)
+def read_data():
+    # Create an array (a multi-dimensional table) out of our data file, full of text
+    all_clinker_data = np.genfromtxt("clinker_data_p3.csv", delimiter=',',skip_header=1)
+    
+    # Select the data range we are interested in, convert it into a new array, full of numbers
+    clinker_data = np.array(all_clinker_data[1:,2:], dtype=float)
+    print(clinker_data)
 
-
-# Select the data range we are interested in, convert it into a new array, full of numbers
-clinker_data = np.array(all_clinker_data[1:,2:], dtype=float)
-print(clinker_data)
+clinker_data = read_data()
 
 # Compute a total alkali column by summing two columns together
 total_alkali = ((clinker_data[:,7]) + (clinker_data[:,8]))
