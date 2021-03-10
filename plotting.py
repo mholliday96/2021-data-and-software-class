@@ -7,7 +7,10 @@ import matplotlib.pyplot as plt
 #import tasplot
 import pandas as pd
 
-def read_data():
+def read_data(filename, delimiter =',', starting_row = 0):
+    """this function reads data from a specific filename. 
+    specified file should read to .csv"""
+    
     # Create an array (a multi-dimensional table) out of our data file, full of text
     all_clinker_data = np.genfromtxt("clinker_data_p3.csv", delimiter=',',skip_header=1)
     
