@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 #import tasplot
 import pandas as pd
 
-def read_data(filename, delimiter =',', starting_row = 0):
+
+def read_data(filename="clinker_data_p3", delimiter =',', starting_row = 0):
     """this function reads data from a specific filename. 
     specified file should read to .csv"""
     
@@ -20,6 +21,7 @@ def read_data(filename, delimiter =',', starting_row = 0):
 
 clinker_data = read_data()
 
+def process_data(filename="clinker_data")
 # Compute a total alkali column by summing two columns together
 total_alkali = ((clinker_data[:,7]) + (clinker_data[:,8]))
 
@@ -34,10 +36,10 @@ clinker_plot = plt.plot(processed_clinker_data[:,0],processed_clinker_data[:,9])
 plt.show(block=True)
 
 #Create the TAS format as per 2015 John A Stevenson @volcan01010
-silica = [50, 60, 70, 80]
-total_alkalis = [2, 3, 4, 5, 6]
+#silica = [50, 60, 70, 80]
+#total_alkalis = [2, 3, 4, 5, 6]
 
-ax1 = fig.subplot(111)
+#ax1 = fig.subplot(111)
 #tasplot.add_LeMaitre_fields(ax1)
 plt.plot(silica, total_alkalis)
 
