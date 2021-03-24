@@ -1,0 +1,1 @@
+Total alkali versus silica plot of preliminary XRF data of clinker deposits from Montana, USA.
