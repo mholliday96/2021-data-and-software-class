@@ -6,6 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 #import tasplot
 import pandas as pd
+import os
+
 
 def read_data(filename, delimiter =',', starting_row = 0):
     """this function reads data from a specific filename. 
@@ -16,19 +18,22 @@ def read_data(filename, delimiter =',', starting_row = 0):
     
     # Select the data range we are interested in, convert it into a new array, full of numbers
     clinker_data = np.array(all_clinker_data[1:,2:], dtype=float)
-    print(clinker_data)
+    return clinker_data
 
 clinker_data = read_data()
 
+def process_data(filename = "clinker_data"):
 # Compute a total alkali column by summing two columns together
-total_alkali = ((clinker_data[:,7]) + (clinker_data[:,8]))
+    total_alkali = ((clinker_data[:,7]) + (clinker_data[:,8]))
 
 
 # Append this new column to the existing temperature_data array
-processed_clinker_data = np.append(clinker_data, total_alkali,1)
-print (processed_clinker_data)
+    processed_clinker_data = np.append(clinker_data, total_alkali,1)
+    print (processed_clinker_data)
 
 # Create a figure of the processed data
+def plot():
+    data_directory = os.path.realpath(os.path.join(os.path.dirname(__file__), "..","data")) 
 clinker_figure = plt.figure()
 clinker_plot = plt.plot(processed_clinker_data[:,0],processed_clinker_data[:,9])
 plt.show(block=True)
@@ -45,4 +50,8 @@ plt.plot(silica, total_alkalis)
 total_alkali_figure.savefig('./TAS_clinkers.png')
 
 
+print(__name__)
+print(__file__)
 
+if __name__ == "__main__":
+    plot()
