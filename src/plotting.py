@@ -17,7 +17,7 @@ def read_data(filename="clinker_data_p3", delimiter =',', starting_row = 0):
     
     # Select the data range we are interested in, convert it into a new array, full of numbers
     clinker_data = np.array(all_clinker_data[1:,2:], dtype=float)
-    print(clinker_data)
+    return clinker_data
 
 clinker_data = read_data()
 
