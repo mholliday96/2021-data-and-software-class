@@ -6,7 +6,7 @@ def celsius_to_kelvin(temperature):
     #pre-conditions
     assert(float(temperature))
     assert(temperature >= absolute_zero_c)
-    assert(absolute_zero_c = -273.15)
+    
     return(temperature+273.15)
     
 
@@ -58,4 +58,4 @@ def normalize_rectangle(rect):
 
     return (0, 0, upper_x, upper_y)
 
-    print(normalize_rectangle(0.0, 0.0, 5.0, 1.0))
+    print(normalize_rectangle((0.0, 0.0, 5.0, 1.0)))
