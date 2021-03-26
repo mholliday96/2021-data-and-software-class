@@ -17,11 +17,11 @@ def read_data(filename="clinker_data_p3", delimiter =',', starting_row = 0):
     
     # Select the data range we are interested in, convert it into a new array, full of numbers
     clinker_data = np.array(all_clinker_data[1:,2:], dtype=float)
-    print(clinker_data)
+    return clinker_data
 
 clinker_data = read_data()
 
-def process_data(filename="clinker_data")
+def process_data(filename="clinker_data_p3"):
 # Compute a total alkali column by summing two columns together
 total_alkali = ((clinker_data[:,7]) + (clinker_data[:,8]))
 
@@ -45,6 +45,5 @@ plt.plot(silica, total_alkalis)
 
 #show figure
 total_alkali_figure.savefig('./TAS_clinkers.png')
-
 
 
