@@ -6,3 +6,7 @@ sys.path.append(os.path.join(
     "../"))
 
 import src.plotting as plotting
+
+
+def test_plot():
+    assert(plotting.plot() == None)
