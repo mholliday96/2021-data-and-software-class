@@ -10,10 +10,10 @@
     "author": [
         {
             "@type": "Person",
-            "@id": "https://orcid.org/0000-0001-7098-8198",
-            "givenName": "Rene",
-            "familyName": "Gassmoeller",
-            "email": "rene.gassmoeller@mailbox.org",
+            "@id": "https://orcid.org/0000-0002-0371-8654",
+            "givenName": "McKenna",
+            "familyName": "Holliday",
+            "email": "m.holliday@ufl.edu",
             "affiliation": {
                 "@type": "Organization",
                 "name": "Department of Geological Sciences, University of Florida"
