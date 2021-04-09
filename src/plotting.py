@@ -2,14 +2,13 @@
 
 # Import the libraries we are using. It is good practice to import all necessary
 # libraries in the first lines of a file.
+import os
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
-
 import pandas as pd
-import os
 
-
-def read_data(filename, delimiter =',', starting_row = 0):
+def read_data(filename = "clinker_data_p3.csv", delimiter =','):
     """this function reads data from a specific filename. 
     specified file should read to .csv"""
     
@@ -22,7 +21,7 @@ def read_data(filename, delimiter =',', starting_row = 0):
 
 clinker_data = read_data()
 
-def process_data(filename = "clinker_data"):
+def process_data(filename = "clinker_data_p3.csv"):
 # Compute a total alkali column by summing two columns together
     total_alkali = ((clinker_data[:,7]) + (clinker_data[:,8]))
 
@@ -38,20 +37,24 @@ clinker_figure = plt.figure()
 clinker_plot = plt.plot(processed_clinker_data[:,0],processed_clinker_data[:,9])
 plt.show(block=True)
 
-#Create the TAS format as per 2015 John A Stevenson @volcan01010
-silica = [50, 60, 70, 80]
-total_alkalis = [2, 3, 4, 5, 6]
+def convert_data(filename, output_filename):
+    all_data = pd.read_csv(filename, index_col='silica', header=4)
+    all_data.info()
+    all_data.to_json(output_filename)
 
-ax1 = fig.subplot(111)
-#tasplot.add_LeMaitre_fields(ax1)
-plt.plot(silica, total_alkalis)
+    input_filename = os.path.join(data_directory,input_file)
+    plot_filename = os.path.join(results_directory,plot_file)
+    json_filename = os.path.join(results_directory,json_output_file)
+
+    clinker_data = read_data(input_filename, starting_row=0)
+    processed_clinker_data = process_data(clinker_data)
+    plot_data(processed_clinker_data, plot_filename)
+    convert_data(input_filename, json_filename)
 
 #show figure
 total_alkali_figure.savefig('./TAS_clinkers.png')
 
 
-print(__name__)
-print(__file__)
-
 if __name__ == "__main__":
+    print(sys.argv)[1]
     plot()
