@@ -1,5 +1,7 @@
 #!/bin/python
 
+"""This is a simple plotting script written for future reference"""
+
 # Import the libraries we are using. It is good practice to import all necessary
 # libraries in the first lines of a file.
 import os
@@ -40,11 +42,11 @@ def convert_data(filename, output_filename):
 def plot_data(processed_clinker_data, plot_filename):
     """This takes processed data and generates a figure"""
     # Create a figure of the processed data
-    TAS_figure = plt.figure()
+    tas_figure = plt.figure()
     plt.plot (processed_clinker_data[:,1],processed_clinker_data[:,2])
 
     plt.show(block=True)
-    TAS_figure.savefig(plot_filename)
+    tas_figure.savefig(plot_filename)
 
 # Create a figure of the processed data
 def plot():
