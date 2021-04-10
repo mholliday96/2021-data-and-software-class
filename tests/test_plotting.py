@@ -41,5 +41,5 @@ def test_plot():
     """A test for the plot() function."""
     assert plotting.plot() is None
 
-""" Publishing the testing script is useful so that other scientists can use this software confidently
-when justifying their own results."""
+""" Publishing the testing script is useful so that other workers can use this software confidently
+    to justify their own results."""
