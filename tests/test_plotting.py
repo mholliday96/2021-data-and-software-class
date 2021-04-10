@@ -40,3 +40,6 @@ def test_convert_data():
 def test_plot():
     """A test for the plot() function."""
     assert plotting.plot() is None
+
+""" Publishing the testing script is useful so that other scientists can use this software confidently
+when justifying their own results."""
