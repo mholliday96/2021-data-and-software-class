@@ -10,12 +10,21 @@ sys.path.append(os.path.join(
 
 import src.clinker_plotter as plotting
 
+def test_plot():
+    assert(TAS_clinkers.plot() == None)
+
+def test_plot():
+    """A test for the plot() function."""
+    plot_file = "TAS_clinkers.png"
+    results_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","results"))
+    plot_filename = os.path.join(results_directory,plot_file)
+
 def test_read_data():
     """A test for the read_data() function."""
     input_file = "clinker_data_p3.csv"
     data_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","data"))
     input_filename = os.path.join(data_directory,input_file)
-    clinker_data = plotting.read_data(filename)
+    clinker_data = plotting.read_data(input_filename)
     
     assert(clinker_data.shape == (10,9))
 
@@ -36,12 +45,6 @@ def test_convert_data():
     output_data = pd.read_json(json_filename)
 
     assert input_data.info() is output_data.info()
-
-def test_plot():
-    """A test for the plot() function."""
-    plot_file = "TAS_clinkers.png"
-    results_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","results"))
-    plot_filename = os.path.join(results_directory,plot_file)
 
 """ Publishing the testing script is useful so that other workers can use this software confidently
     to justify their own results."""
