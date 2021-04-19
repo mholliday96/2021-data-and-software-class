@@ -11,9 +11,6 @@ sys.path.append(os.path.join(
 import src.clinker_plotter as plotting
 
 def test_plot():
-    assert(TAS_clinkers.plot() == None)
-
-def test_plot():
     """A test for the plot() function."""
     plot_file = "TAS_clinkers.png"
     results_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","results"))
@@ -25,7 +22,7 @@ def test_read_data():
     data_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","data"))
     input_filename = os.path.join(data_directory,input_file)
     clinker_data = plotting.read_data(input_filename)
-    
+
     assert(clinker_data.shape == (10,9))
 
 def test_convert_data():
