@@ -1,6 +1,7 @@
 # A Simple Plotting Library for Clinker data
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5072/zenodo.779844.svg)](https://doi.org/10.5072/zenodo.779844)
 
 
 ## About
