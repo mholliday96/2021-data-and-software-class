@@ -18,7 +18,7 @@ The main program is inside the file `src/plotting.py` and can be executed using 
 
 ## Citation
 
-Please see [CITATION.cff](CITATION.cff) for how to cite this software.
+Please refer to the codemeta.json file for all information regarding how to cite this software.
 
 ## License
 
