@@ -43,7 +43,7 @@ def plot_data(processed_clinker_data, plot_filename):
     """This takes processed data and generates a figure"""
     # Create a figure of the processed data
     tas_figure = plt.figure()
-    plt.plot (processed_clinker_data[:,1],processed_clinker_data[:,2])
+    plt.plot (processed_clinker_data[:,1],processed_clinker_data[:,10])
 
     plt.show(block=True)
     tas_figure.savefig(plot_filename)
