@@ -1,3 +1,6 @@
+
+#TODO: fix pylint warnings
+
 #!/bin/python
 
 """This is a simple plotting script written for future reference"""
