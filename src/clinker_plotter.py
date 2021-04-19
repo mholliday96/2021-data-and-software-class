@@ -15,7 +15,7 @@ def read_data(filename, delimiter =','):
     specified file should read to .csv"""
 
     # Create an array (a multi-dimensional table) out of our data file, full of text
-    all_clinker_data = np.genfromtxt(filename, delimiter=delimiter)
+    all_clinker_data = np.genfromtxt(filename, delimiter= delimiter)
 
     # Select the data range we are interested in, convert it into a new array, full of numbers
     data_array = np.array(all_clinker_data[1:,2:], dtype=float)

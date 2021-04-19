@@ -1,3 +1,5 @@
+#TODO: fix pylint warnings
+
 """This file contains all tests for our plotting library."""
 
 import sys
@@ -9,12 +11,6 @@ sys.path.append(os.path.join(
     ".."))
 
 import src.clinker_plotter as plotting
-
-def test_plot():
-    """A test for the plot() function."""
-    plot_file = "TAS_clinkers.png"
-    results_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","results"))
-    plot_filename = os.path.join(results_directory,plot_file)
 
 def test_read_data():
     """A test for the read_data() function."""
@@ -42,6 +38,11 @@ def test_convert_data():
     output_data = pd.read_json(json_filename)
 
     assert input_data.info() is output_data.info()
+
+def test_plot():
+    """A test for the plot() function."""
+    plot_file = "TAS_clinkers.png"
+    results_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","results"))
 
 """ Publishing the testing script is useful so that other workers can use this software confidently
     to justify their own results."""
