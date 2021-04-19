@@ -3,21 +3,21 @@
 import sys
 import os
 import pandas as pd
-import src.clinker_plotter as plotting
 
 sys.path.append(os.path.join(
     os.path.dirname(__file__),
     ".."))
+
+import src.clinker_plotter as plotting
 
 def test_read_data():
     """A test for the read_data() function."""
     input_file = "clinker_data_p3.csv"
     data_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","data"))
     input_filename = os.path.join(data_directory,input_file)
-    clinker_data = plotting.read_data(input_filename, starting_row=0)
-
-    assert clinker_data.shape == (12,10)
-    assert(clinker_data[1,1] == 84.6)
+    clinker_data = plotting.read_data(filename)
+    
+    assert(clinker_data.shape == (10,9))
 
 def test_convert_data():
     """A test for the convert_data() function."""
@@ -39,7 +39,9 @@ def test_convert_data():
 
 def test_plot():
     """A test for the plot() function."""
-    assert plotting.plot() is None
+    plot_file = "TAS_clinkers.png"
+    results_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","results"))
+    plot_filename = os.path.join(results_directory,plot_file)
 
 """ Publishing the testing script is useful so that other workers can use this software confidently
     to justify their own results."""
