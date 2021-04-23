@@ -19,7 +19,8 @@ def test_read_data():
     input_filename = os.path.join(data_directory,input_file)
     clinker_data = plotting.read_data(input_filename)
 
-    assert(clinker_data.shape == (10,9))
+    # Check that the dataset has 9 rows and 10 columns
+    assert(clinker_data.shape == (9,10))
 
 def test_convert_data():
     """A test for the convert_data() function."""
