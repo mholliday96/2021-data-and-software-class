@@ -30,7 +30,7 @@ def process_data(data_array):
     """this function adds Na2O and K2O columns for total alkali count"""
 
 # Compute a total alkali column by summing two columns together
-    total_alkali = ((data_array[:,7]) + (data_array[:,8]))
+    total_alkali = ((data_array[:,7,None]) + (data_array[:,8,None]))
 
 # Append this new column to the existing temperature_data array
     processed_clinker_data = np.append(data_array, total_alkali, 1)
